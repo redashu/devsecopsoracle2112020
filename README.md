@@ -170,3 +170,25 @@ d0f69ec7a4b7        ashuoraclepy:v1     "python hello.py"   8 seconds ago       
    56  history 
    57  docker  logs -f   ashuc1 
  ```
+
+## running a child process in a alread running container 
+
+```
+  20  docker  exec  -it  ashuc1   bash
+   21  docker  exec  -it -d ashuc1   ping  8.8.8.8
+   
+```
+## checking resources by Containers 
+
+```
+ 27  docker  stats  ashuc1 
+   28  docker  stats  
+   
+```
+## More operations on containers
+
+```
+docker  kill  ashuc1
+docker  start  ashuc1
+docker  rm   ashuc1
+```
