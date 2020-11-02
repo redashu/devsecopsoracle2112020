@@ -332,3 +332,38 @@ e834502e209b        nginxashuweb:v1     "/docker-entrypoint.…"   3 seconds ago
 
 <img src="portf.png">
 
+
+## image name understanding
+
+<img src="imagename.png">
+
+## Image pushing on Docker HUB 
+
+### tagging 
+```
+ docker  tag   nginxashuweb:v1    dockerashu/nginxashuweb:v1  
+ 
+ ```
+ 
+ ### docker hub Login 
+ 
+ ```
+ [ec2-user@ip-172-31-73-230 ~]$ docker  login  -u dockerashu 
+Password: 
+WARNING! Your password will be stored unencrypted in /home/ec2-user/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+
+Login Succeeded
+
+```
+
+### Pushing image
+
+```
+docker  push dockerashu/nginxashuweb:v1
+
+```
+
+
+
