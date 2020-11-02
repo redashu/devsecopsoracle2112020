@@ -366,4 +366,8 @@ docker  push dockerashu/nginxashuweb:v1
 ```
 
 
+# CI with Jenkins in Devops 
+
+<img src="ci.png">
+
 
