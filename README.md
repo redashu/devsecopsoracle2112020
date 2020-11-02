@@ -58,3 +58,25 @@ root@ip-172-31-73-230 ~]# systemctl status  docker
  usermod -aG docker username
  ```
  
+## COnnecting to Docker engine 
+
+<img src="deconn.png">
+
+## creating container using docker images
+
+<di.png>
+
+## Docker basic operations 
+
+```
+ 6  docker  version 
+    7  docker  search  mongodb 
+    8  docker  images  
+    9  docker  pull  java
+   10  docker  images  
+   11  docker  pull  python 
+   12  docker  pull  mysql 
+   
+ ```
+ 
+ 
