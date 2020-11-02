@@ -162,3 +162,11 @@ d0f69ec7a4b7        ashuoraclepy:v1     "python hello.py"   8 seconds ago       
 
 
 ```
+
+## checking output of programe running in container 
+
+```
+ 55  docker  logs  ashuc1 
+   56  history 
+   57  docker  logs -f   ashuc1 
+ ```
