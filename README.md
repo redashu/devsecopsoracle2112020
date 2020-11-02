@@ -116,3 +116,49 @@ RUN  chmod +x  hello.py
 CMD  ["python","hello.py"]
 
 ```
+
+
+## Building Docker image with Python code & Dockerfile
+
+```
+[ec2-user@ip-172-31-73-230 pycode]$ docker  build  -t  ashuoraclepy:v1 .
+Sending build context to Docker daemon  3.584kB
+Step 1/7 : FROM  python
+ ---> 5336a27a9b1f
+Step 2/7 : MAINTAINER   ashutoshh@linux.com
+ ---> Running in 9800e7b26950
+Removing intermediate container 9800e7b26950
+ ---> ad033f70c1ac
+Step 3/7 : RUN  mkdir /mycode
+ ---> Running in 6d7ffe4639b4
+Removing intermediate container 6d7ffe4639b4
+ ---> 35792ad8d0d4
+Step 4/7 : COPY  hello.py  /mycode/hello.
+
+```
+
+## creating contaienr from Docker image
+
+```
+[ec2-user@ip-172-31-73-230 ~]$ docker  images
+REPOSITORY           TAG                 IMAGE ID            CREATED             SIZE
+satishorcle          v1                  43b609895d46        4 minutes ago       886MB
+manish               v1                  3de440ad37a6        12 minutes ago      886MB
+arthurpy             v1                  82a89c6754db        12 minutes ago      886MB
+rashmioracle         v1                  72b649315cae        12 minutes ago      886MB
+anandpy              v1                  31a365bb7c9c        15 minutes ago      886MB
+ashuoraclepy         v1                  44b3ffc4fa0f        15 minutes ago      886MB
+mysql                latest              db2b37ec6181        10 days ago         545MB
+python               latest              5336a27a9b1f        12 days ago         886MB
+securecodebox/nmap   latest              0d7ffd5f5c30        4 weeks ago         31.6MB
+java                 latest              d23bdf5b1b1b        3 years ago         643MB
+[ec2-user@ip-172-31-73-230 ~]$ docker  run  --name  ashuc1 -it  -d  ashuoraclepy:v1 
+d0f69ec7a4b7200eac154bb55259f706abfa62cf97408d4eb3f32e271964eeb4
+[ec2-user@ip-172-31-73-230 ~]$ docker  ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+d0f69ec7a4b7        ashuoraclepy:v1     "python hello.py"   8 seconds ago       Up 7 seconds                            ashuc1
+[ec2-user@ip-172-31-73-230 ~]$ 
+
+
+
+```
