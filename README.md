@@ -387,3 +387,9 @@ docker  push dockerashu/nginxashuweb:v1
     
   ```
   
+  ## access web URL of Jenkins 
+  
+  ```
+  http://3.236.218.85:8080/
+  ```
+  
