@@ -81,7 +81,8 @@ root@ip-172-31-73-230 ~]# systemctl status  docker
  
  ## PYthon Code 
  
- ```import  time,subprocess
+ ```
+ import  time,subprocess
 
 while 2 > 1 :
     print("Hello Oracle !!")
@@ -96,3 +97,22 @@ while 2 > 1 :
 ```
     
     
+## Pyhon code
+
+```
+FROM  python
+#  i am connecting to DE  and  asking python base docker  image 
+MAINTAINER   ashutoshh@linux.com 
+# optional field ; DevInfo 
+RUN  mkdir /mycode 
+#  use of RUN to execute any shell command in python based  contianer 
+COPY  hello.py  /mycode/hello.py 
+# it will take hello.py from Host  OS  and copy it docker image 
+#  copy can only take data from the place where dockerfile is present 
+WORKDIR  /mycode
+# similar to cd command in linux/windows 
+RUN  chmod +x  hello.py
+# how to run code automatically when you create contaienr from the Docker image
+CMD  ["python","hello.py"]
+
+```
