@@ -79,4 +79,21 @@ root@ip-172-31-73-230 ~]# systemctl status  docker
    
  ```
  
+ ## PYthon Code 
  
+ ```import  time,subprocess
+
+while 2 > 1 :
+    print("Hello Oracle !!")
+    time.sleep(1)
+    kernel_check=subprocess.getoutput('uname -r')
+    print("check kernel version ....")
+    time.sleep(2)
+    print("found linux kernel version is ",kernel_check)
+    print("_______")
+    print("_______")
+    print("_______")
+    
+    ```
+    
+    
