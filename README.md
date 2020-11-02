@@ -21,3 +21,40 @@
 [windows 10] ('https://hub.docker.com/editions/community/docker-ce-desktop-windows/')
 
 
+## Install docker in Amazon Linux vm 
+
+```
+root@ip-172-31-73-230 ~]# yum install  docker  -y
+Failed to set locale, defaulting to C
+Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+amzn2-core                                                              | 3.7 kB  00:00:00     
+Resolving Dependencies
+--> Running transaction check
+---> Package docker.x86_64 0:19.03.6ce-4.amzn2 will be installed
+--> Processing Dependency: runc >= 1.0.0 for packa
+
+```
+
+## starting docker engine on any linux platform 
+
+```
+root@ip-172-31-73-230 ~]# systemctl status  docker 
+● docker.service - Docker Application Container Engine
+   Loaded: loaded (/usr/lib/systemd/system/docker.service; disabled; vendor preset: disabled)
+   Active: active (running) since Mon 2020-11-02 05:38:20 UTC; 33s ago
+     Docs: https://docs.docker.com
+  Process: 4328 ExecStartPre=/usr/libexec/docker/docker-setup-runtimes.sh (code=exited, status=0/SUCCESS)
+  Process: 4315 ExecStartPre=/bin/mkdir -p /run/docker (code=exited, status=0/SUCCESS)
+ Main PID: 4331 (dockerd)
+    Tasks: 10
+   Memory: 36.4M
+   CGroup: /system.slice/doc
+  
+ ```
+ 
+ ## adding a non root user into Docker group
+ 
+ ```
+ usermod -aG docker username
+ ```
+ 
