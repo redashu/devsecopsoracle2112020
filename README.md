@@ -192,3 +192,46 @@ docker  kill  ashuc1
 docker  start  ashuc1
 docker  rm   ashuc1
 ```
+
+
+## Container image and instance creation 
+
+<img src="cre.png">
+
+## On the SErver Side starting Docker engine on Tcp socket 
+
+```
+[root@ip-172-31-73-230 ~]# cat  /etc/sysconfig/docker
+# The max number of open files for the daemon itself, and all
+# running containers.  The default value of 1048576 mirrors the value
+# used by the systemd service unit.
+DAEMON_MAXFILES=1048576
+
+# Additional startup options for the Docker daemon, for example:
+# OPTIONS="--ip-forward=true --iptables=true"
+# By default we limit the number of open files per container
+OPTIONS="--default-ulimit nofile=1024:4096  -H tcp://0.0.0.0:2375"
+
+# How many seconds the sysvinit script waits for the pidfile to appear
+# when starting the daemon.
+DAEMON_PIDFILE_TIMEOUT=10
+[root@ip-172-31-73-230 ~]# systemctl daemon-reload   ^C
+[root@ip-172-31-73-230 ~]# systemctl restart docker 
+
+```
+
+## Making Client of Docker engine 
+
+### for Mac based Client 
+
+```
+export DOCKER_HOST="tcp://34.204.241.101:2375"
+```
+
+### For windows 10 based client 
+
+```
+## only on Powershell not in CMD 
+$env:DOCKER_HOST="tcp://34.204.241.101:2375"
+
+```
