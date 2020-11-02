@@ -371,3 +371,19 @@ docker  push dockerashu/nginxashuweb:v1
 <img src="ci.png">
 
 
+## Jenkins installation on LInux system
+
+[Install URL]  ('https://www.jenkins.io/doc/book/installing/linux/#red-hat-centos')
+
+```
+ 1  yum update -y
+    2  sudo wget -O /etc/yum.repos.d/jenkins.repo     https://pkg.jenkins.io/redhat-stable/jenkins.repo
+    3  rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+    4  yum install jenkins java-1.8.0-openjdk-devel
+    5  systemctl daemon-reload
+    6  systemctl status jenkins 
+    7  systemctl start jenkins 
+    8  systemctl status jenkins 
+    
+  ```
+  
