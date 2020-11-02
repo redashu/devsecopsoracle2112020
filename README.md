@@ -235,3 +235,100 @@ export DOCKER_HOST="tcp://34.204.241.101:2375"
 $env:DOCKER_HOST="tcp://34.204.241.101:2375"
 
 ```
+
+# Nginx web server 
+
+<img nginx.png>
+
+## Deploying sample application with Nginx web server 
+
+## Clone repo 
+
+```
+git clone  https://github.com/mdn/beginner-html-site-styled
+cd beginner-html-site-styled
+```
+
+## adding dockerfile here 
+
+```
+[ec2-user@ip-172-31-73-230 beginner-html-site-styled]$ cat  Dockerfile 
+FROM  nginx
+# connecting to docker engine and asking to pull nginx image from  Docker hub if not present locally 
+MAINTAINER  ashutoshh@linux.com
+WORKDIR  /usr/share/nginx/html/
+COPY  .  .
+# first . means source from Host machine
+#  second . means current working directory under container 
+EXPOSE 80
+
+```
+
+## adding .dockerignore
+
+```
+cat  .dockerignore 
+*.md
+LICENSE
+Dockerfile
+.dockerignore
+.git
+[ec2-user@ip-172-31-73-230 beginner-html-site-styled]$ ls -a
+.  ..  .dockerignore  .git  CODE_OF_CONDUCT.md  Dockerfile  LICENSE  README.md  images  index.html  styles
+
+```
+
+
+## building Docker image with webapp
+
+```
+[ec2-user@ip-172-31-73-230 beginner-html-site-styled]$ docker  build  -t  nginxashuweb:v1        .
+Sending build context to Docker daemon  63.49kB
+Step 1/5 : FROM  nginx
+latest: Pulling from library/nginx
+bb79b6b2107f: Already exists 
+111447d5894d: Pull complete 
+a95689b8e6cb: Pull complete 
+1a0022e444c2: Pull complete 
+32b7488a3833: Pull complete 
+Digest: sha256:ed7f815851b5299f616220a63edac69a4cc200e7f536a56e421988da82e44ed8
+Status: Downloaded newer image for nginx:latest
+ ---> f35646e83998
+Step 2/5 : MAINTAINER  ashutoshh@linux.com
+ ---> Running in 610f32413d4b
+Removing intermediate container 610f32413d4b
+ ---> e29783e70eb3
+Step 3/5 : WORKDIR  /usr/share/nginx/html/
+ ---> Running in 2a6b41b40c63
+Removing intermediate container 2a6b41b40c63
+ ---> 583fce6a2227
+Step 4/5 : COPY  .  .
+ ---> 596b63ae8b8a
+Step 5/5 : EXPOSE 80
+ ---> Running in c583cd2614e3
+Removing intermediate container c583cd2614e3
+ ---> e0eb90551ae8
+Successfully built e0eb90551ae8
+Successfully tagged nginxashuweb:v1
+
+```
+
+## Creation rules for a contaienr to access from External world
+
+```
+[ec2-user@ip-172-31-73-230 ~]$ docker run  -d  --name ashuc2 -p  1234:80  nginxashuweb:v1  
+e834502e209bf96dcb212a0c484a4fd53eb6979bc8c00d3212560a33d68dd2dc
+[ec2-user@ip-172-31-73-230 ~]$ docker  ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                  NAMES
+e834502e209b        nginxashuweb:v1     "/docker-entrypoint.…"   3 seconds ago       Up 2 seconds        0.0.0.0:1234->80/tcp   ashuc2
+
+```
+
+## Docker images sharing between hosts
+
+<img src="creg.png">
+
+
+
+<img src="portf.png">
+
