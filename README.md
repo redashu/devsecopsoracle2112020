@@ -22,3 +22,14 @@ export DOCKER_HOST="tcp://34.204.241.101:2375"
 
 <img src="j.png">
 
+## CI | CD 
+
+<img src="cicd.png">
+
+## shell script for container check and launch 
+
+```
+( docker kill arthurC && docker rm arthurC ) || sleep 1
+docker run --name arthurC -d -p 4444:5000 arthurflask:v1
+
+```
