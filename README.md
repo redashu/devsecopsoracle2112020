@@ -49,3 +49,12 @@ docker run --name arthurC -d -p 4444:5000 arthurflask:v1
 
 ```
 
+## COntainer orchestration 
+
+<img src="orchestration.png">
+
+## container orchestration 
+
+<img src="k8s.png">
+
+ 
