@@ -17,3 +17,8 @@ root@ip-172-31-78-109 ~]# cat  /etc/profile
 export DOCKER_HOST="tcp://34.204.241.101:2375"
 
 ```
+
+## Jenkins more info 
+
+<img src="j.png">
+
