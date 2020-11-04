@@ -63,3 +63,13 @@ sudo mv ./kubectl /usr/bin/kubectl
 
 ```
 
+# making jenkins as Client of Kubernetes
+
+```
+-bash-4.2$ whoami
+jenkins
+-bash-4.2$ pwd
+/var/lib/jenkins
+-bash-4.2$ mkdir .kube 
+
+```
