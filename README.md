@@ -39,3 +39,6 @@ fbe1912a745a        satishd2            0.29%               34.45MiB / 3.851GiB 
 
 ```
 
+## updating jenkins pipeline mode 
+
+<img src="jp.png">
