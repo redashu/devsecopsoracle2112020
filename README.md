@@ -19,3 +19,8 @@ git push origin html
 
 ```
 
+##  udpating image
+
+<img src="job.png">
+
+
