@@ -42,3 +42,24 @@ fbe1912a745a        satishd2            0.29%               34.45MiB / 3.851GiB 
 ## updating jenkins pipeline mode 
 
 <img src="jp.png">
+
+## K8s arch for app deployment with client 
+
+<img src="k8sclient.png">
+
+## Installing Kubectl on jenkins (CI|CD) server
+
+### you can install kubectl in any OS where your jenkins is running 
+
+## installing kubectl on LInux Based platform 
+
+```
+curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl"
+
+===
+chmod +x ./kubectl
+
+sudo mv ./kubectl /usr/bin/kubectl
+
+```
+
