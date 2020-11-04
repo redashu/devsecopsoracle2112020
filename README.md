@@ -73,3 +73,12 @@ jenkins
 -bash-4.2$ mkdir .kube 
 
 ```
+
+## application Deployment model using k8s 
+
+<img src="appdep.png">
+
+## application deployment life cycle model 
+
+<img src="appmodel.png">
+
