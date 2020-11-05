@@ -13,3 +13,14 @@
 
 <img src="eu.png">
 
+## java based project 
+
+<img src="java.png">
+
+## Installing maven on CI|CD server 
+
+```
+[root@ip-172-31-78-109 ~]# yum  install  java-1.8.0-openjdk  java-1.8.0-openjdk-devel  maven 
+
+```
+
